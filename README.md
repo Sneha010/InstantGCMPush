@@ -42,30 +42,37 @@ It has two main methods
 
 ##### Add following services and receiver in your app manifest
 
-  1.  ``` 
-       <receiver
-            android:name="com.google.android.gms.gcm.GcmReceiver" android:exported="true" android:permission="com.google.android.c2dm.permission.SEND">
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
-                <category android:name="com.yourpackagename" />
-            </intent-filter>
-      </receiver>
-
-      ```
-      
-  2.  ```
-      <service android:name="com.instant.instantgcm.services.MyInstanceIDListenerService" android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.android.gms.iid.InstanceID"/>
-            </intent-filter>
-        </service>
+ 
+ 1. 
+ ```
+    <receiver
+        android:name="com.google.android.gms.gcm.GcmReceiver"
+        android:exported="true"
+android:permission="com.google.android.c2dm.permission.SEND" >
+        <intent-filter>
+            <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            <category android:name="com.yourpackagename" />
+        </intent-filter>
+     </receiver>
+    ```
+    
+  2.  
+  ```
+    <service android:name="com.instant.instantgcm.services.MyInstanceIDListenerService" android:exported="false">
+        <intent-filter>
+            <action android:name="com.google.android.gms.iid.InstanceID"/>
+        </intent-filter>
+    </service>
+    
+  ```
         
-  3. ```
-     <service
-            android:name="com.instant.instantgcm.services.RegistrationIntentService"
-            android:exported="false">
-        </service>
-     ```
+  3. 
+  ```
+    <service
+        android:name="com.instant.instantgcm.services.RegistrationIntentService"
+        android:exported="false">
+    </service>
+  ```
 
 #### Add dependency of libraries
  
