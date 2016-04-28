@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">instantgcm</string>
+    <string name="reg_receive_error">Unable to receive GCM Token</string>
+</resources>

@@ -1,0 +1,57 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.google.gms.google-services'
+
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.google.android.gms:play-services-gcm:8.3.0'
+    androidTestCompile 'com.android.support:support-annotations:23.2.0'
+
+}
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'instantgcm'
+
+    publishedGroupId = 'com.instant.instantgcm'
+    libraryName = 'instantgcm'
+    artifact = 'instantgcm'
+
+    libraryDescription = 'Instant allows to receive GCM registration Id using new Instant-Id API implementation.'
+
+    siteUrl = ''
+    gitUrl = 'https://github.com/Sneha010/InstantGCMPush.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'sneha010'
+    developerName = 'Sneha Khadatare'
+    developerEmail = 'sneha.khadatare@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+
