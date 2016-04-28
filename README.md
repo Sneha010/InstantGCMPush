@@ -42,17 +42,17 @@ It has two main methods
 
 ##### Add following services and receiver in your app manifest
 
-  1. ``` 
-      <receiver
-            android:name="com.google.android.gms.gcm.GcmReceiver"
-            android:exported="true"
-            android:permission="com.google.android.c2dm.permission.SEND" >
+  1.  ``` 
+       <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver" android:exported="true" android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
                 <category android:name="com.yourpackagename" />
             </intent-filter>
-        </receiver>
-        ```
+      </receiver>
+
+      ```
+      
   2.  ```
       <service android:name="com.instant.instantgcm.services.MyInstanceIDListenerService" android:exported="false">
             <intent-filter>
