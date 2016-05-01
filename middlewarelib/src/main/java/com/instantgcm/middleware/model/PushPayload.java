@@ -11,21 +11,29 @@ public class PushPayload {
     @SerializedName("uid")
     private String mUid;
 
-    @SerializedName("devicetype")
-    private String mDeviceType;
+
+    @SerializedName("platform")
+    private String mPlatform;
 
     @SerializedName("devicetoken")
     private String mDeviceToken;
 
-    public PushPayload(String uid, String deviceType, String deviceToken) {
+    public PushPayload(String uid, String platform, String deviceToken) {
         mUid = uid;
-        mDeviceType = deviceType;
+        mPlatform = platform;
         mDeviceToken = deviceToken;
+    }
+
+    public String getPlatform() {
+        return mPlatform;
+    }
+
+    public void setPlatform(String platform) {
+        mPlatform = platform;
     }
 
     public PushPayload(String uid, String deviceType) {
         mUid = uid;
-        mDeviceType = deviceType;
     }
 
     public String getUid() {
@@ -36,13 +44,6 @@ public class PushPayload {
         mUid = uid;
     }
 
-    public String getDeviceType() {
-        return mDeviceType;
-    }
-
-    public void setDeviceType(String deviceType) {
-        mDeviceType = deviceType;
-    }
 
     public String getDeviceToken() {
         return mDeviceToken;
