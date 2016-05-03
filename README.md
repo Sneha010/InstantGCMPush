@@ -72,7 +72,7 @@ It has two main methods
       
   1. For instantgcm (Available on jcenter):
       
-      ``` compile 'com.instant.instantgcm:instantgcm:1.0.0' ``` 
+      ``` compile 'com.instant.instantgcm:instantgcm:1.0.1' ``` 
       
       or you can copy the module in project and use the following
       
