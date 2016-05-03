@@ -40,9 +40,15 @@ It has two main methods
       - ```InstantGCMDeregistrationListener``` provides result callback of this register method. 
       
 
-##### Add following services and receiver in your app manifest
+##### Add following Permissions and Receiver in your app manifest
 
- 
+```
+  <uses-permission android:name="android.permission.INTERNET" />
+   
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+```
 ```
     <receiver
         android:name="com.google.android.gms.gcm.GcmReceiver"
@@ -57,22 +63,7 @@ It has two main methods
      </receiver>
 ```
  
-```
-    <service android:name="com.instant.instantgcm.services.MyInstanceIDListenerService" 
-    android:exported="false">
-        <intent-filter>
-            <action android:name="com.google.android.gms.iid.InstanceID"/>
-        </intent-filter>
-    </service>
-    
-```
 
-```
-    <service
-        android:name="com.instant.instantgcm.services.RegistrationIntentService"
-        android:exported="false">
-    </service>
-```
 
 
 #### Add dependency of libraries
