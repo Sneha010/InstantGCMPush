@@ -31,11 +31,11 @@ public class GCMMiddlewareClient {
         }
         sDeviceId = middlewareDataInterface.getDeviceId();
         sInstantGCMRegistrationListener = instantGCMRegistrationListener;
-        InstantGCMClient.initialise(context , new GCMDataInterfaceImpl(middlewareDataInterface.getProjectId()), mGCMRegListener);
+        InstantGCMClient.initialise(context, new GCMDataInterfaceImpl(middlewareDataInterface.getProjectId()), mGCMRegListener);
     }
 
     public static MiddlewareDBClient getPushMiddleWareClient(MiddlewareDataInterface middlewareDataInterface) {
-       return MiddlewareDBClient.getInstance(middlewareDataInterface);
+        return MiddlewareDBClient.getInstance(middlewareDataInterface);
     }
 
     private static GCMRegListener mGCMRegListener = new GCMRegListener() {
@@ -52,21 +52,21 @@ public class GCMMiddlewareClient {
     };
 
 
-    public static void deRegister(Context context , MiddlewareDataInterface middlewareDataInterface,
-                                InstantGCMDeregistrationListener instantGCMRegistrationListener){
-        if(dbClient == null){
+    public static void deRegister(Context context, MiddlewareDataInterface middlewareDataInterface,
+                                  InstantGCMDeregistrationListener instantGCMRegistrationListener) {
+        if (dbClient == null) {
             dbClient = getPushMiddleWareClient(middlewareDataInterface);
         }
-        dbClient.deRegisterRequest(new PushPayload(middlewareDataInterface.getDeviceId() , Constants.PLATFORM) , instantGCMRegistrationListener);
+        dbClient.deRegisterRequest(new PushPayload(middlewareDataInterface.getDeviceId(), Constants.PLATFORM), instantGCMRegistrationListener);
     }
 
     /*
     requestBean forms the runner list
      */
-    public static void postFavorites(Context context ,UpdateFavoriteRequest requestBean,
+    public static void postFavorites(Context context, UpdateFavoriteRequest requestBean,
                                      MiddlewareDataInterface middlewareDataInterface,
-                                     InstantGCMPostFavListener instantGCMPostFavListener){
-        if(dbClient == null){
+                                     InstantGCMPostFavListener instantGCMPostFavListener) {
+        if (dbClient == null) {
             dbClient = getPushMiddleWareClient(middlewareDataInterface);
         }
 
@@ -74,6 +74,6 @@ public class GCMMiddlewareClient {
         requestBean.getFavorites().setPlatform(Constants.PLATFORM);
         requestBean.getFavorites().setUid(middlewareDataInterface.getDeviceId());
 
-        dbClient.postFavoriteRequest(requestBean , instantGCMPostFavListener);
+        dbClient.postFavoriteRequest(requestBean, instantGCMPostFavListener);
     }
 }

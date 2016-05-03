@@ -13,11 +13,16 @@ public class GCMRegisterUtils {
     private static final String PREF_NAME = "PREF_NAME";
     private static final String REG_KEY = "REG_KEY";
     private static final String APP_VERSION = "APP_VERSION";
+    private static final String IS_REGISTERED_ON_SERVER = "IS_REGISTERED_ON_SERVER";
 
     private static SharedPreferences getPreferences(Context context){
         SharedPreferences prefs = context.getSharedPreferences(
                          PREF_NAME, Context.MODE_PRIVATE);
         return prefs;
+    }
+
+    public static void clearGCMRegId(Context context){
+        saveGCMRegistrationId(context , "");
     }
 
     public static String getGCMRegistrationId(Context context){
@@ -51,6 +56,13 @@ public class GCMRegisterUtils {
         }
     }
 
+    public static void setRegisteredOnServer(Context context ,boolean isRegistered){
+        getPreferences(context).edit().putBoolean(IS_REGISTERED_ON_SERVER , isRegistered);
+    }
+
+    public static boolean isRegisteredOnServer(Context context){
+        return getPreferences(context).getBoolean(IS_REGISTERED_ON_SERVER , false);
+    }
 
 
 }

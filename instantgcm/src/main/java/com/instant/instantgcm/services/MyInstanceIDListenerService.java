@@ -17,8 +17,10 @@
 package com.instant.instantgcm.services;
 
 import android.content.Intent;
+import android.util.Log;
 
 import com.google.android.gms.iid.InstanceIDListenerService;
+import com.instant.instantgcm.utils.GCMRegisterUtils;
 
 public class MyInstanceIDListenerService extends InstanceIDListenerService {
 
@@ -33,6 +35,13 @@ public class MyInstanceIDListenerService extends InstanceIDListenerService {
     @Override
     public void onTokenRefresh() {
         // Fetch updated Instance ID token and notify our app's server of any changes (if applicable).
+
+        Log.i(TAG, "onTokenRefresh: Token Refreshed");
+
+        GCMRegisterUtils.setRegisteredOnServer(getApplicationContext() , false);
+
+        GCMRegisterUtils.clearGCMRegId(getApplicationContext()); // clear stored reg Id to save fresh token (reg Id)
+
         Intent intent = new Intent(this, RegistrationIntentService.class);
         startService(intent);
     }

@@ -6,11 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/InstantGCMPush.iml" filepath="$PROJECT_DIR$/InstantGCMPush.iml" />
       <module fileurl="file://$PROJECT_DIR$/Push_Using_Retrofit.iml" filepath="$PROJECT_DIR$/Push_Using_Retrofit.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/instantgcm/gcmlib.iml" filepath="$PROJECT_DIR$/instantgcm/gcmlib.iml" />
       <module fileurl="file://$PROJECT_DIR$/instantgcm/instantgcm.iml" filepath="$PROJECT_DIR$/instantgcm/instantgcm.iml" />
-      <module fileurl="file://$PROJECT_DIR$/instantgcm/instantgcm.iml" filepath="$PROJECT_DIR$/instantgcm/instantgcm.iml" />
-      <module fileurl="file://$PROJECT_DIR$/middlewarelib/middlewarelib.iml" filepath="$PROJECT_DIR$/middlewarelib/middlewarelib.iml" />
       <module fileurl="file://$PROJECT_DIR$/middlewarelib/middlewarelib.iml" filepath="$PROJECT_DIR$/middlewarelib/middlewarelib.iml" />
     </modules>
   </component>
