@@ -35,10 +35,10 @@ It has two main methods
         Only After successful connection we proceed with the middleware registration.
       
   2. ``` GCMMiddlewareClient.deRegister(Context context , MiddlewareDataInterface middlewareDataInterface, InstantGCMDeregistrationListener instantGCMRegistrationListener)```
-  3. 
       - ```MiddlewareDataInterface``` passes correspoding Base url , project Id or # and device unique Id such as IMEI #.
       - ```InstantGCMDeregistrationListener``` provides result callback of this register method. 
       
+  3. Use ``` GCMRegisterUtils.isRegisteredOnServer(context)``` and ``` GCMRegisterUtils.setRegisteredOnServer(context ,             "true/false")``` for communication regarding successful transfer of GCMRegId to the app middleware.
 
 ##### Add following Permissions and Receiver in your app manifest
 
