@@ -18,6 +18,12 @@ public class PushPayload {
     @SerializedName("devicetoken")
     private String mDeviceToken;
 
+    public PushPayload(String uid, String platform) {
+        mUid = uid;
+        mPlatform = platform;
+    }
+
+
     public PushPayload(String uid, String platform, String deviceToken) {
         mUid = uid;
         mPlatform = platform;
@@ -32,9 +38,6 @@ public class PushPayload {
         mPlatform = platform;
     }
 
-    public PushPayload(String uid, String deviceType) {
-        mUid = uid;
-    }
 
     public String getUid() {
         return mUid;

@@ -3,6 +3,9 @@
     package="com.demo.instantpush">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- [START gcm_permission] -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -39,6 +42,8 @@
             </intent-filter>
         </service>
         <!-- [END gcm_listener] -->
+
+
 
     </application>
 

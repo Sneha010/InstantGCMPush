@@ -4,17 +4,19 @@
     <application
    >
 
-        <!-- [START instanceId_listener] -->
         <service
-            android:name=".services.MyInstanceIDListenerService"
+            android:name="com.instant.instantgcm.services.MyInstanceIDListenerService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.android.gms.iid.InstanceID"/>
             </intent-filter>
         </service>
+
+        <!-- [START instanceId_listener] -->
+
         <!-- [END instanceId_listener] -->
         <service
-            android:name=".services.RegistrationIntentService"
+            android:name="com.instant.instantgcm.services.RegistrationIntentService"
             android:exported="false">
         </service>
 
